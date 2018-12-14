@@ -1,4 +1,8 @@
-//Brute Force
+#include <iostream>
+#include <vector>
+#include <map>
+
+//two-pass hash table
 class Solution_1 {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -31,3 +35,27 @@ public:
     }
 };
 
+//one-pass hash table
+class Solution_2 {
+public:
+    //one pass hash table
+    vector<int> twoSum(vector<int>& nums, int target) {
+        //hash table
+        std::map<int, int> map;
+        std::vector<int> re_v;
+        
+        for (unsigned int i = 0; i < nums.size(); ++i){
+            //find as inserting value
+            //count search the element in the container, if found then return 1
+            if(map.count(target - nums[i])){
+                re_v = {i ,map[target - nums[i]]};
+                std::sort(re_v.begin(), re_v.end());
+                return re_v;
+            }
+            
+            //if not found, insert value
+            map[nums[i]] = i;
+        }
+        return {};
+    }
+};
