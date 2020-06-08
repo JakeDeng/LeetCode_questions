@@ -3,7 +3,7 @@
 //twp pass
 class Solution_1 {
 public:
-    vector<int> sortArrayByParity(vector<int>& A) {
+    std::vector<int> sortArrayByParity(std::vector<int>& A) {
         // even array
         std::vector<int> even;
         std::vector<int> odd;
@@ -27,7 +27,7 @@ public:
 //in-place:quick sort
 class Solution_2 {
 public:
-    vector<int> sortArrayByParity(vector<int>& A) {
+    std::vector<int> sortArrayByParity(std::vector<int>& A) {
         //create two pointers
         int i = 0;
         int j = A.size()-1;

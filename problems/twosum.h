@@ -1,11 +1,12 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <map>
 
 //two-pass hash table
 class Solution_1 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
         //return vector
         std::vector<int> return_vector;
         //map <index, value>
@@ -39,12 +40,12 @@ public:
 class Solution_2 {
 public:
     //one pass hash table
-    vector<int> twoSum(vector<int>& nums, int target) {
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
         //hash table
         std::map<int, int> map;
         std::vector<int> re_v;
         
-        for (unsigned int i = 0; i < nums.size(); ++i){
+        for (int i = 0; i < nums.size(); ++i){
             //find as inserting value
             //count search the element in the container, if found then return 1
             if(map.count(target - nums[i])){
