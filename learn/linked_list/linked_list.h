@@ -11,6 +11,7 @@ struct ListNode{
 public:
     int val;
     ListNode* next;
+    ListNode()=defualt;
     ListNode(int x){
         val = x;
         next = nullptr;
